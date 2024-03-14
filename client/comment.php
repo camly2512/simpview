@@ -35,7 +35,7 @@
       ?>
             <div class="d-flex row-flex">
             <div class="col-1">
-                <img style=" background-color: #FADADD" id="img-user" src="sever/img/<?php echo $row['img']; ?>" class="rounded-circle" alt="">
+                <img style=" background-color: #FADADD" id="img-user" src="server/img/<?php echo $row['img']; ?>" class="rounded-circle" alt="">
             </div>
             <div class="col-11">
                 <form action="" method="POST">
@@ -98,7 +98,7 @@
           $row_user = $result_user->fetch_array();
         ?>
             <div class="col-sm-1">
-                <img style=" background-color: #FADADD" id="img-user" src="sever/img/<?php echo $row_user['img']; ?>" class="img-user-watch rounded-circle mx-2" alt="">
+                <img style=" background-color: #FADADD" id="img-user" src="server/img/<?php echo $row_user['img']; ?>" class="img-user-watch rounded-circle mx-2" alt="">
             </div>
             <div class="col-sm-11">
                <span style="font-weight: bolder !important; font-size:0.875rem" class="text-lowercase mx-1">

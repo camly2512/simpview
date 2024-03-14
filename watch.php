@@ -1,7 +1,10 @@
 <?php
 session_start();
-include("sever/conn.php");
+include("server/conn.php");
 $video_id = $_GET['video_id'];
+
+$sql_update_views = "UPDATE videos SET views = views + 1 WHERE video_id = '$video_id'";
+$conn->query($sql_update_views);
 //echo $v;
 $sql_videos = "SELECT * FROM videos
 WHERE videos.video_id= '$video_id'
@@ -57,7 +60,7 @@ if ($result_videos->num_rows > 0) {
 
                     <div class="col-md-8 my-3">
                         <div class="ratio ratio-16x9">
-                            <iframe src="sever/upload/<?php echo $row_videos['filepath']; ?>" allowfullscreen></iframe>
+                            <iframe src="server/upload/<?php echo $row_videos['filepath']; ?>" allowfullscreen></iframe>
                         </div>
 
                         <div>
@@ -76,12 +79,18 @@ if ($result_videos->num_rows > 0) {
                             ?>
                             <div class="d-flex flex-row">
                             <div class="col-sm-1">
-                                <img id="img-user" src="sever/img/<?php echo $row_users['img']; ?>" class="img-user-watch rounded-circle mx-2" alt="">
+                                <img id="img-user" src="server/img/<?php echo $row_users['img']; ?>" class="img-user-watch rounded-circle mx-2" alt="">
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-2">
                                 <a id="user-watch" class="text-dark nav-link" href="index.php?manage=profile&user_id=<?php echo $row_users['user_id']; ?>"><?php echo $row_users['first_name'] ?> <?php echo $row_users['last_name'] ?></i></a>
                             </div>
-                            <div class="col-sm-5 d-flex justify-content-end">
+                            <div class="col-sm-4">
+                                <p class="mx-2" class="mx-2" style="margin-top: 0.25rem;">Lượt xem: <?php echo $row_videos['views']; ?></p>
+                            </div>
+                            <div class="col-sm-4 d-flex justify-content-end">
+                                    <?php include('client/main/report.php'); ?>
+                            </div>
+                            <div class="col-sm-1 d-flex justify-content-end">
                                     <?php include('client/main/account/addplaylist.php'); ?>
                             </div>
                             </div>
@@ -112,7 +121,7 @@ if ($result_videos->num_rows > 0) {
                     <div class=" col-12 col-md-4 my-3">
                         <?php
                         // List
-                        if(isset($_GET['l'])){
+                        if(isset($_GET['categorylist_id'])){
                             include('client/main/account/playlist.php');
                         }
                             
@@ -138,7 +147,7 @@ if ($result_videos->num_rows > 0) {
                                 
                                 <div class="col-5">
                                     <div class="ratio ratio-16x9">
-                                        <video id="myvideos" muted="muted" class="myvideos" src="sever/upload/<?php echo $row_related['filepath']; ?>"></video>
+                                        <video id="myvideos" muted="muted" class="myvideos" src="server/upload/<?php echo $row_related['filepath']; ?>"></video>
                                     </div>
                                 </div>
                                 <div class="col-7 mx-2">

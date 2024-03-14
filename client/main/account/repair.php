@@ -70,7 +70,7 @@ if ($result->num_rows > 0) {
                     <div>
                         <label for="formFileMultiple" class="form-label text-dark fs-6 fw-bolder">Video cũ của bạn</label>
                         <div class="ratio ratio-16x9 my-2">
-                            <video id="myvideos" muted="muted" class="myvideos" src="sever/upload/<?php echo $row['filepath']; ?>"></video>
+                            <video id="myvideos" muted="muted" class="myvideos" src="server/upload/<?php echo $row['filepath']; ?>"></video>
                         </div>
                         <input id="input-file" name="video" class="form-control my-3" type="file" id="formFileMultiple" multiple>
                     </div>

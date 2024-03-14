@@ -82,7 +82,7 @@ if ($result_list->num_rows > 0) {
 
 
                         <div class="ratio ratio-16x9" onclick="location.href='watch.php?video_id=<?php echo $row_videos['video_id'] ?>&categorylist_id=<?php echo $idlist ?>';">
-                            <video id="myvideos" muted="muted" class="myvideos" src="sever/upload/<?php echo $row_videos['filepath']; ?>"></video>
+                            <video id="myvideos" muted="muted" class="myvideos" src="server/upload/<?php echo $row_videos['filepath']; ?>"></video>
                         </div>
                     </div>
                 <?php

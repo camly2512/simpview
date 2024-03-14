@@ -45,7 +45,7 @@
     <div class="row d-flex">
         <?php
         // truy vấn video theo danh mục hoặc tất cả
-        //echo ($_GET['category_id']);
+        // echo ($_GET['category_id']);
         if (isset($_GET['category_id'])) {
             $sql_videos = "SELECT * FROM videos
                 WHERE videos.category_id= $_GET[category_id] AND videos.user_id= $_GET[user_id]
@@ -65,7 +65,7 @@
         ?>
                 <div class="col-md-3 col-4 my-3" onclick="location.href='watch.php?video_id=<?php echo $row_videos['video_id'] ?>';" style="cursor:pointer;">
                     <div class="ratio ratio-16x9 my-2">
-                        <video id="myvideos" muted="muted" class="myvideos" src="sever/upload/<?php echo $row_videos['filepath']; ?>"></video>
+                        <video id="myvideos" muted="muted" class="myvideos" src="server/upload/<?php echo $row_videos['filepath']; ?>"></video>
                     </div>
                     <h6 style="padding: 0.25rem 0.5rem;" id="title" class="text-capitalize nav-link text-dark"><?php echo $row_videos['title']; ?></h6>
                     
@@ -94,20 +94,22 @@
     btnL.addEventListener("click", goLeft);
 
     var clickedIndex = 0;
-
     function goRight() {
-        if (clickedIndex < 2) {
-            clickedIndex = clickedIndex + 1;
-            content.style.marginLeft = -190 * clickedIndex + "px";
-        }
+    if (clickedIndex <= 4 ) {
+        clickedIndex = clickedIndex + 1;
+        content.style.marginLeft = -190 * clickedIndex + "px";
+    } else {
+        // Nếu bạn muốn vòng quay lại khi đến cuối, có thể sử dụng đoạn sau:
+        clickedIndex = 0;
+        content.style.marginLeft = "0px";
+    }
+}
+
+  function goLeft() {
+    if (clickedIndex > 0) {
+      clickedIndex = clickedIndex - 1;
+      content.style.marginLeft = -190 * clickedIndex + "px";
 
     }
-
-    function goLeft() {
-        if (clickedIndex > 0) {
-            clickedIndex = clickedIndex - 1;
-            content.style.marginLeft = -190 * clickedIndex + "px";
-
-        }
-    }
+  }
 </script>

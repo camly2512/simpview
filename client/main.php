@@ -11,14 +11,17 @@
         include("main/register.php");
     } elseif ($temp == 'account') {
         include("main/account.php");
-    ?>
+        ?>
         <style>
             #none {
                 display: none !important;
             }
         </style>
     <?php
-
+    } elseif ($temp == 'forgotpassword') {
+        include("main/forgotpassword.php");
+    } elseif ($temp == 'resetpassword') {
+        include("main/resetpassword.php");
     } elseif ($temp == 'profile') {
         include("main/profile.php");
     ?>

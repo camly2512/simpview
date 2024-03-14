@@ -24,7 +24,7 @@ ORDER BY videos.video_id DESC";
 
 
                     <div class="ratio ratio-16x9 my-2">
-                        <video id="myvideos" muted="muted" class="myvideos" src="sever/upload/<?php echo $row_videos['filepath']; ?>"></video>
+                        <video id="myvideos" muted="muted" class="myvideos" src="server/upload/<?php echo $row_videos['filepath']; ?>"></video>
                     </div>
 
                     <div style="height: 100px;">
@@ -43,7 +43,7 @@ ORDER BY videos.video_id DESC";
 
                         ?>
                         <div class="flex-row d-flex my-2">
-                        <a style="transform: translateY(0.5rem);" class="text-dark" href="index.php?manage=profile&user_id=<?php echo $row_users['user_id']; ?>"><img style="background-color: #FDECED" id="img-user-video" src="sever/img/<?php echo $row_users['img']; ?>" class="rounded-circle mx-1" alt=""></a>
+                        <a style="transform: translateY(0.5rem);" class="text-dark" href="index.php?manage=profile&user_id=<?php echo $row_users['user_id']; ?>"><img style="background-color: #FDECED" id="img-user-video" src="server/img/<?php echo $row_users['img']; ?>" class="rounded-circle mx-1" alt=""></a>
                         <h6 id="title" style="padding: 0.25rem 0.5rem;" class="text-capitalize text-dark"><?php echo $row_videos['title']; ?></h6>
                         </div>
                                 <a id="user" class="text-dark" href="index.php?manage=profile&user_id=<?php echo $row_users['user_id']; ?>"><?php echo $row_users['first_name'] ?> <?php echo $row_users['last_name'] ?></a>
