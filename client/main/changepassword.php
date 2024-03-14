@@ -6,26 +6,27 @@ if (isset($_POST['changepassword'])) {
     $oldpassword = md5($_POST['oldpassword']);
     $newpassword = md5($_POST['newpassword']);
 
+    // Truy vấn cơ sở dữ liệu để lấy mật khẩu hiện tại của người dùng
     $sql = "SELECT * FROM users WHERE email='$email' AND password='$oldpassword' LIMIT 1";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-    // output data of each row
-        $sql = "UPDATE client SET password='$newpassword' WHERE username='$email'";
+        // Mật khẩu cũ trùng khớp, tiến hành cập nhật mật khẩu mới
+        $update_sql = "UPDATE users SET password='$newpassword' WHERE email='$email'";
 
-        if ($conn->query($sql) === TRUE) {
+        if ($conn->query($update_sql) === TRUE) {
             echo '<div style="color: green; text-align: center; font-size: .875rem;">
-            
             <span>Đổi mật khẩu thành công!</span>
             </div>';
         } else {
-            //echo "Error updating record: " . $conn->error;
+            echo '<div style="color: red; text-align: center; font-size: .875rem;">
+            <span>Lỗi khi cập nhật mật khẩu!</span>
+            </div>';
         }
-
     } else {
         echo '<div style="color: red; text-align: center; font-size: .875rem;">
-        
-        <span> Đổi mật khẩu không thành công!</span> </div>';
+        <span>Mật khẩu cũ không đúng!</span>
+        </div>';
     }
 }
 ?>

@@ -19,7 +19,7 @@
                 <div class="col-md-4 col-lg-3 col-6 my-3" onclick="location.href='watch.php?video_id=<?php echo $row_videos['video_id'] ?>';" style="cursor:pointer;">
 
                     <div class="ratio ratio-16x9 my-2">
-                        <video id="myvideos" muted="muted" class="myvideos" src="sever/upload/<?php echo $row_videos['filepath']; ?>"></video>
+                        <video id="myvideos" muted="muted" class="myvideos" src="server/upload/<?php echo $row_videos['filepath']; ?>"></video>
                     </div>
 
                     <div style="height: 90px;">
@@ -37,7 +37,7 @@
                         ?>
                                 <div class="flex-row d-flex my-2">
                                     <a id="user-main" class="text-dark d-flex align-items-center" href="index.php?manage=profile&user_id=<?php echo $row_users['user_id']; ?>">
-                                        <img src="sever/img/<?php echo $row_users['img']; ?>" class="rounded-circle" alt="">
+                                        <img src="server/img/<?php echo $row_users['img']; ?>" class="rounded-circle" alt="">
                                     </a>
                                     <div>
                                         <b><p style="padding: 0.25rem 0.5rem; margin: 0" class="text-capitalize text-dark"><?php echo $row_videos['title']; ?></p></b>

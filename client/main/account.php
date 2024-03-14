@@ -13,13 +13,13 @@ if (isset($_SESSION['login'])) {
 ?>
 
         <div class="col-md-12 col-12 rounded-3">
-            <img style="background-color: #e7f0fe;" id="img-bg" src="sever/img/<?php echo $row['profile_pic']; ?>" class="rounded-3 img-fluid" alt="">
+            <img style="background-color: #e7f0fe;" id="img-bg" src="server/img/<?php echo $row['profile_pic']; ?>" class="rounded-3 img-fluid" alt="">
         </div>
 
         <div class="d-flex">
 
             <div class="col-md-3 col-3 text-center">
-                <img style="background-color: #e7f0fe;" id="img-profile" src="sever/img/<?php echo $row['img']; ?>" class="img-thumbnail rounded-circle" alt="">
+                <img style="background-color: #e7f0fe;" id="img-profile" src="server/img/<?php echo $row['img']; ?>" class="img-thumbnail rounded-circle" alt="">
             </div>
 
             <div id="name-profile" class="col-md-9 col-9 text-left">
@@ -30,6 +30,7 @@ if (isset($_SESSION['login'])) {
             </div>
         </div>
 
+        
         <nav id="nav-profile" class="navbar navbar-expand-lg navbar-light bg-light">
 
             <div class="container-fluid">

@@ -22,8 +22,13 @@
 <?php
         } elseif ($tmp == 'category' && $query == 'repair') {
             include("main/category/repair.php");
-        } else {
+        } elseif ($tmp == 'report' && $query == 'videos'){
+            include("main/report/videos.php");
+        } elseif ($tmp == 'report' && $query == 'accounts'){
+            include("main/report/accounts.php");
+        }else {
             include("main/home.php");
         }
 ?>
+
 </div>

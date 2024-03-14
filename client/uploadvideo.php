@@ -1,5 +1,5 @@
 <?php
-include('../sever/conn.php');
+include('../server/conn.php');
 $title = addslashes($_POST['title']);
 $content = addslashes( $_POST['content']);
 $category_id = addslashes($_POST['category_id']);
@@ -16,7 +16,7 @@ if(isset($_POST['uploadvideo'])){
     echo $sql;
     if ($conn->query($sql) === TRUE) {
     // echo "New record created successfully";
-    move_uploaded_file($video_tmp,'../sever/upload/'.$video);
+    move_uploaded_file($video_tmp,'../server/upload/'.$video);
     ?>
     <script>
         window.location.replace("../index.php?manage=account&query=file");
@@ -29,7 +29,7 @@ if(isset($_POST['uploadvideo'])){
 }elseif(isset($_POST['repair'])){
     // repair
     if($video_tmp!=''){
-        move_uploaded_file($video_tmp,'../sever/upload/'.$video);
+        move_uploaded_file($video_tmp,'../server/upload/'.$video);
 
         $update = "UPDATE videos SET title='$title', content='$content', category_id='$category_id', privacy='$status', filepath='$video' 
         WHERE video_id='$_GET[video_id]'";
@@ -40,7 +40,7 @@ if(isset($_POST['uploadvideo'])){
         if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_array()) {
-            unlink('../sever/upload/'.$row['filepath']);
+            unlink('../server/upload/'.$row['filepath']);
         }
         } else {
         //echo "0 results";
@@ -73,7 +73,7 @@ if(isset($_POST['uploadvideo'])){
     if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_array()) {
-        unlink('../sever/upload/'.$row['filepath']);
+        unlink('../server/upload/'.$row['filepath']);
     }
     } else {
     //echo "0 results";
@@ -83,6 +83,11 @@ if(isset($_POST['uploadvideo'])){
 
     if ($conn->query($sql) === TRUE) {
         //echo "Record deleted successfully";
+        ?>
+        <script>
+            window.location.replace("../index.php?manage=account&query=&user_id=<?php echo $row['user_id']; ?>");
+        </script>       
+        <?php
       ?>
     <!-- <script>
             window.location.replace("../index.php?manage=account&query=file");

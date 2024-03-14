@@ -1,5 +1,5 @@
 <?php
-include('../sever/conn.php');
+include('../server/conn.php');
 
 $image = $_FILES['image']['name'];
 $image_tmp = $_FILES['image']['tmp_name'];
@@ -9,7 +9,7 @@ if (isset($_POST['updateimg'])) {
 
     // repair
     if ($image_tmp != '') {
-        move_uploaded_file($image_tmp, '../sever/img/'. $image);
+        move_uploaded_file($image_tmp, '../server/img/'. $image);
 
         $update = "UPDATE users SET profile_pic='$image' 
         WHERE user_id='$_GET[user_id]'";
@@ -20,7 +20,7 @@ if (isset($_POST['updateimg'])) {
         if ($result->num_rows > 0) {
             // output data of each row
             while ($row = $result->fetch_array()) {
-                unlink('../sever/img/' . $row['profile_pic']);
+                unlink('../server/img/' . $row['profile_pic']);
             }
         } else {
             //echo "0 results";

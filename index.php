@@ -47,7 +47,7 @@
   </script>
   <?php
   session_start();
-  include("sever/conn.php");
+  include("server/conn.php");
   include('client/header.php');
   include('client/menu.php');
   include('client/main.php');

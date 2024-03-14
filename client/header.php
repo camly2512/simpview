@@ -44,7 +44,7 @@ if (isset($_GET['logout']) && $_GET['logout'] == 1) {
           <div class="dropdown">
 
             <div class="dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-              <a href="index.php?manage=account" class="d-flex text-dark justify-content-center text-decoration-none"><img id="img-user" src="sever/img/<?php echo $row['img']; ?>" class="rounded-circle mx-1" style="background-color: #e7f0fe;"></a>
+              <a href="index.php?manage=account" class="d-flex text-dark justify-content-center text-decoration-none"><img id="img-user" src="server/img/<?php echo $row['img']; ?>" class="rounded-circle mx-1" style="background-color: #e7f0fe;"></a>
             </div>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 

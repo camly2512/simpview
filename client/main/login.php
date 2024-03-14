@@ -40,7 +40,7 @@ if (isset($_POST['login'])) {
                 </div>
                 <!-- Thêm vào form đăng nhập -->
 <div class="d-flex text-center justify-content-center">
-    <a style="text-decoration: none;" class="mx-1" href="index.php?manage=forgot_password">Quên mật khẩu?</a>
+    <a style="text-decoration: none;" class="mx-1" href="index.php?manage=forgotpassword">Quên mật khẩu?</a>
 </div>
 
             </form>

@@ -2,7 +2,6 @@
     <div class="col-md-6 col-12 my-2">
         Ngày tham gia <?php echo $row['created_at'] ?>
     </div>
-
     <div class="col-md-6 col-12 my-2 text-center">
 
         <h5 class="text-start mx-2 my-2">

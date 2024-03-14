@@ -113,7 +113,7 @@ if (isset($_POST['newlist'])) {
 
 
                                 <div class="ratio ratio-16x9" onclick="location.href='watch.php?video_id=<?php echo $v ?>&categorylist_id=<?php echo $row_list['categorylist_id'] ?>';" style="cursor:pointer;">
-                                    <video id="myvideos" muted="muted" class="myvideos" src="sever/upload/<?php echo $row_videos['filepath']; ?>"></video>
+                                    <video id="myvideos" muted="muted" class="myvideos" src="server/upload/<?php echo $row_videos['filepath']; ?>"></video>
                                 </div>
                             </div>
                             <div class="col-6 col-md-9 mx-2">

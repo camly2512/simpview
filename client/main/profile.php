@@ -12,20 +12,23 @@ if (isset($_GET['user_id'])) {
 ?>
 
 <div class="col-md-12 col-12 rounded-3">
-            <img style="background-color: #FDF7F8" id="img-bg" src="sever/img/<?php echo $row['profile_pic']; ?>" class="rounded-3 img-fluid" alt="">
+            <img style="background-color: #FDF7F8" id="img-bg" src="server/img/<?php echo $row['profile_pic']; ?>" class="rounded-3 img-fluid" alt="">
         </div>
 
         <div class="d-flex">
 
             <div class="col-md-3 col-3 text-center">
-                <img style="background-color: #FDECED" id="img-profile" src="sever/img/<?php echo $row['img']; ?>" class="img-thumbnail rounded-circle" alt="">
+                <img style="background-color: #FDECED" id="img-profile" src="server/img/<?php echo $row['img']; ?>" class="img-thumbnail rounded-circle" alt="">
             </div>
 
-            <div id="name-profile" class="col-md-9 col-9 text-left">
+            <div id="name-profile" class="col-md-7 col-8 text-left">
 
                 <h4 class="fw-bold text-dark col-12"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></h4>
                 <p class="text-dark col-12"><?php echo $row['email']; ?></p>
                 <br>
+            </div>
+            <div class="col-sm-2 d-flex justify-content-end">
+                <?php include('client/main/report_user.php'); ?>
             </div>
         </div>
 
@@ -110,7 +113,7 @@ if ($result_videos->num_rows > 0) {
                
 
                     <div class="ratio ratio-16x9 my-2">
-                        <video id="myvideos" muted="muted" class="myvideos" src="sever/upload/<?php echo $row_videos['filepath']; ?>"></video>
+                        <video id="myvideos" muted="muted" class="myvideos" src="server/upload/<?php echo $row_videos['filepath']; ?>"></video>
                     </div>
                     <h6 id="title" class="card-title nav-link text-dark"><?php echo $row_videos['title']; ?></h6>      
                     <span class="mx-3" style="font-size:0.7rem">
@@ -141,23 +144,22 @@ btnL.addEventListener("click", goLeft);
 
 var clickedIndex = 0;
 
-function goRight()
-{
-	if (clickedIndex < 2)
-  {
-    clickedIndex = clickedIndex +1;
-   		content.style.marginLeft = -190*clickedIndex + "px";  
-  }
-
+function goRight() {
+    if (clickedIndex <= 4 ) {
+        clickedIndex = clickedIndex + 1;
+        content.style.marginLeft = -190 * clickedIndex + "px";
+    } else {
+        // Nếu bạn muốn vòng quay lại khi đến cuối, có thể sử dụng đoạn sau:
+        clickedIndex = 0;
+        content.style.marginLeft = "0px";
+    }
 }
 
-function goLeft()
-{
-	if (clickedIndex >0)
-  {
-    clickedIndex = clickedIndex -1;
-	content.style.marginLeft = -190*clickedIndex + "px";  
- 
+  function goLeft() {
+    if (clickedIndex > 0) {
+      clickedIndex = clickedIndex - 1;
+      content.style.marginLeft = -190 * clickedIndex + "px";
+
+    }
   }
-}
 </script>
