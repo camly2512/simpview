@@ -46,6 +46,7 @@
 })
   </script>
   <?php
+  ob_start();
   session_start();
   include("sever/conn.php");
   include('client/header.php');
